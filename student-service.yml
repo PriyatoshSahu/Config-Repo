@@ -1,0 +1,10 @@
+server:
+  port: 8081
+
+message: Hello from Spring Cloud Config Server
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
