@@ -1,0 +1,47 @@
+spring:
+  # Gmail SMTP
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: YOUR_GMAIL_ADDRESS@gmail.com   # ← Replace
+    password: YOUR_APP_PASSWORD              # ← Replace (Gmail App Password)
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+    default-encoding: UTF-8
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: notification-service-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "com.healthcare.kafka"
+        spring.json.use.type.headers: false
+      enable-auto-commit: false
+    listener:
+      ack-mode: MANUAL_IMMEDIATE
+      concurrency: 3
+
+# App config
+app:
+  notification:
+    from-email: YOUR_GMAIL_ADDRESS@gmail.com  # ← Replace
+    from-name: HealthCare System
+    email-dedup-ttl-minutes: 60
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
