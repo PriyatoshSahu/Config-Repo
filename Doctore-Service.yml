@@ -8,10 +8,15 @@ spring:
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+eureka:
+  client:
+    register-with-eureka:true
+    fetch-registry:true    
+    
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql:true
 
   data:
     redis:
