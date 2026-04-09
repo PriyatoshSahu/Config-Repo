@@ -5,7 +5,7 @@
 #   datasource:
 #     url: jdbc:mysql://localhost:3306/doctor_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
 #     username: root
-#     password: root
+#     password: password
 #     driver-class-name: com.mysql.cj.jdbc.Driver
 
 # cloud:
@@ -17,7 +17,7 @@
 #       static: ap-south-1
 # aws:
 #   s3:
-#     bucket: my-config-server-bucket      
+#     bucket: doctor-service1209      
 
 # eureka:
 #   client:
