@@ -1,3 +1,47 @@
+# server:
+#   port: 8081
+
+# spring:
+#   datasource:
+#     url: jdbc:mysql://localhost:3306/doctor_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+#     username: root
+#     password: root
+#     driver-class-name: com.mysql.cj.jdbc.Driver
+
+# cloud:
+#   aws:
+#     credentials:
+#       access-key: AKIAYSEBCZGUIXHU7XLM
+#       secret-key: 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
+#     region:
+#       static: ap-south-1
+# aws:
+#   s3:
+#     bucket: my-config-server-bucket      
+
+# eureka:
+#   client:
+#     register-with-eureka: true
+#     fetch-registry: true    
+    
+#   jpa:
+#     hibernate:
+#       ddl-auto: update
+#     show-sql: true
+
+#   data:
+#     redis:
+#       host: localhost
+#       port: 6379
+
+#   kafka:
+#     bootstrap-servers: localhost:9092
+
+# eureka:
+#   client:
+#     service-url:
+#       defaultZone: http://localhost:8761/eureka/
+
 server:
   port: 8081
 
@@ -5,18 +49,13 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/doctor_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
-    password: root
+    password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-eureka:
-  client:
-    register-with-eureka:true
-    fetch-registry:true    
-    
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql:true
+    show-sql: true
 
   data:
     redis:
@@ -26,7 +65,21 @@ eureka:
   kafka:
     bootstrap-servers: localhost:9092
 
+cloud:
+  aws:
+    credentials:
+      access-key: AKIAYSEBCZGUIXHU7XLM
+      secret-key: 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
+    region:
+      static: ap-south-1
+
+aws:
+  s3:
+    bucket: doctor-service1209
+
 eureka:
   client:
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
