@@ -51,30 +51,27 @@ spring:
     username: root
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-
   data:
     redis:
       host: localhost
       port: 6379
-
- kafka:
+  kafka:                                          # ✅ 2 spaces — inside spring block
     bootstrap-servers: localhost:9092
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer  # ✅ was StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
-        spring.json.add.type.headers: false   # ✅ avoids type issues on consumer side
+        spring.json.add.type.headers: false
     consumer:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer  # ✅ was StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       group-id: doctore-service-group
       properties:
-        spring.json.trusted.packages: "*" 
+        spring.json.trusted.packages: "*"
 
 cloud:
   aws:
