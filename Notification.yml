@@ -3,8 +3,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: YOUR_GMAIL_ADDRESS@gmail.com   # ← Replace
-    password: YOUR_APP_PASSWORD              # ← Replace (Gmail App Password)
+    username: demoproject2345@gmail.com   # ← Replace
+    password: dhmchchuqmvjidgh  #← Replace (Gmail App Password)
     properties:
       mail:
         smtp:
@@ -35,7 +35,7 @@ spring:
 # App config
 app:
   notification:
-    from-email: YOUR_GMAIL_ADDRESS@gmail.com  # ← Replace
+    from-email: demoproject2345@gmail.com  # ← Replace
     from-name: HealthCare System
     email-dedup-ttl-minutes: 60
 
