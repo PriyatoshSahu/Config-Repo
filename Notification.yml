@@ -1,10 +1,12 @@
+server:
+  port: 8084
+
 spring:
-  # Gmail SMTP
   mail:
     host: smtp.gmail.com
     port: 587
-    username: demoproject2345@gmail.com   # ← Replace
-    password: dhmchchuqmvjidgh  #← Replace (Gmail App Password)
+    username: demoproject2345@gmail.com
+    password: dhmchchuqmvjidgh
     properties:
       mail:
         smtp:
@@ -32,15 +34,16 @@ spring:
       ack-mode: MANUAL_IMMEDIATE
       concurrency: 3
 
-# App config
 app:
   notification:
-    from-email: demoproject2345@gmail.com  # ← Replace
+    from-email: demoproject2345@gmail.com
     from-name: HealthCare System
     email-dedup-ttl-minutes: 60
 
 eureka:
   client:
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
   instance:
